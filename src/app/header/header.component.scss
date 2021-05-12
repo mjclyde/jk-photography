@@ -1,0 +1,51 @@
+@import '../../colors';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 10px 20px;
+  background-color: white;
+
+  .brand {
+    color: $light-gray;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 66px;
+    }
+
+    .divider {
+      height: 35px;
+      width: 1px;
+      background-color: $light-gray;
+      margin: 0 10px;
+    }
+  }
+
+  .options {
+    display: flex;
+    align-items: center;
+    color: $gray;
+
+    a {
+      margin: 0 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      margin: 0 10px;
+
+      img {
+        margin: 0 4px;
+        width: 30px;
+      }
+    }
+
+  }
+
+}
