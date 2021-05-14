@@ -1,7 +1,3 @@
-<div id="slide-show">
-  <img id="slide-show-img-1" src="assets/slide-show/slide-show-01.jpg" alt="">
-  <img id="slide-show-img-2" src="assets/slide-show/slide-show-02.jpg" alt="">
-  <img id="slide-show-img-3" src="assets/slide-show/slide-show-03.jpg" alt="">
-  <img id="slide-show-img-4" src="assets/slide-show/slide-show-04.jpg" alt="">
-  <img id="slide-show-img-5" src="assets/slide-show/slide-show-05.jpg" alt="">
+<div #slideShowContainer>
+  <img *ngFor="let url of visibleImageUrls | async" src="{{url}}" alt="">
 </div>

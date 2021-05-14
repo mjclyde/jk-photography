@@ -2,7 +2,7 @@
 
 .main-container {
   color: $med-gray;
-  padding: 50px;
+  padding: 80px 0 30px 0;
 }
 
 .top-title-container {
@@ -18,15 +18,17 @@
 
 .title {
   grid-area: titleArea;
-  font-size: 26pt;
+  font-size: 44px;
   font-weight: 300;
 }
 
 .sub-title {
-  font-size: 16pt;
+  font-size: 28px;
+  font-weight: 300;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
 }
 
 .top-spacer {
