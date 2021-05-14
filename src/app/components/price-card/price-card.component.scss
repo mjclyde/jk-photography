@@ -1,0 +1,45 @@
+@import '../../../colors.scss';
+
+.card-container {
+  border-radius: 2px;
+  border: 3px solid white;
+  width: 250px;
+  text-align: center;
+  color: $med-gray;
+  font-weight: 400;
+  &:hover {
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, .15);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .lower-container {
+    padding: 10px;
+    .header {
+      font-size: 20pt;
+      margin: 5px;
+    }
+
+    .sub-header {
+      font-size: 15pt;
+      font-weight: 200;
+    }
+
+    .btn {
+      margin: 10px 0px;
+      button {
+        height: 45px;
+        font-size: 15pt;
+        width: 100%;
+        border: 1px solid #B3A298;
+        background-color: #EDE2DB;
+        color: #8B7E76;
+        border-radius: 3px;
+      }
+    }
+  }
+
+
+}

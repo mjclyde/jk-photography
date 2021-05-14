@@ -1,0 +1,10 @@
+<div class="card-container" (mouseover)="mouseOn$.next(true)" (mouseleave)="mouseOn$.next(false)">
+  <img [src]="img">
+  <div class="lower-container" *ngIf="(mouseOn$ | async)" @slideInOut>
+    <div class="header">{{header}}</div>
+    <div class="sub-header">{{subHeader}}</div>
+    <div class="btn">
+      <button>Book Now</button>
+    </div>
+  </div>
+</div>
