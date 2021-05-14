@@ -1,3 +1,4 @@
+import { ComponentsModule } from './components/components.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,9 +11,10 @@ import { SlideShowComponent } from './slide-show/slide-show.component';
   declarations: [
     AppComponent,
     AppHeaderComponent,
-    SlideShowComponent
+    SlideShowComponent,
   ],
   imports: [
+    ComponentsModule,
     BrowserModule,
     AppRoutingModule
   ],
