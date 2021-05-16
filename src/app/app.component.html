@@ -1,7 +1,7 @@
 <div>
 
-  <app-header></app-header>
-  <img src="{{bannerImageUrl}}">
+  <app-header [fullHeight]="showFullHeightHeader | async"></app-header>
+  <img src="{{bannerImageUrl | async}}">
 
   <app-section-title title="Hi. My name is Jamie." subTitle="I am so glad you are here!"></app-section-title>
   <table>

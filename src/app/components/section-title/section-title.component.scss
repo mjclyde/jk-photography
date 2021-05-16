@@ -1,4 +1,5 @@
 @import '../../../colors.scss';
+@import '../../../variables.scss';
 
 .main-container {
   color: $med-gray;
@@ -20,6 +21,14 @@
   grid-area: titleArea;
   font-size: 44px;
   font-weight: 300;
+
+  @media (max-width: $tablet) {
+    font-size: 32px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 26px;
+  }
 }
 
 .sub-title {
@@ -29,6 +38,14 @@
   justify-content: center;
   align-items: center;
   padding-top: 10px;
+
+  @media (max-width: $tablet) {
+    font-size: 22px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 18px;
+  }
 }
 
 .top-spacer {
