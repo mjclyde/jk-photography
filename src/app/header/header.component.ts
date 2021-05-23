@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { ChangeDetectionStrategy, Component, Input, OnInit, Output, ElementRef } from '@angular/core';
+
+export type HeaderOption = 'about' | 'pricing' | 'testimonials' | 'contact';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +13,10 @@ export class AppHeaderComponent implements OnInit {
 
   @Input() fullHeight = true;
 
+  @Output() optionSelected = new Subject<HeaderOption>();
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

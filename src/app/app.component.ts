@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { SectionTitleComponent } from './components/section-title/section-title.component';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, merge, Observable, BehaviorSubject, Subject, combineLatest } from 'rxjs';
 import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import * as tallImagesMeta from '../assets/tall-images.json';
 import * as wideImagesMeta from '../assets/wide-images.json';
+import { HeaderOption } from './header/header.component';
 const WIDE_IMAGES = (wideImagesMeta as any).default;
 const TALL_IMAGES = (tallImagesMeta as any).default;
 
@@ -12,13 +14,16 @@ const TALL_IMAGES = (tallImagesMeta as any).default;
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
+
+  @ViewChild('aboutRef') aboutRef: SectionTitleComponent;
+  @ViewChild('pricingRef') pricingRef: SectionTitleComponent;
 
   bannerImageUrl: Observable<string>;
   showFullHeightHeader: Observable<boolean>;
 
-
   private _bannerImageUrl = new BehaviorSubject<string>('');
+  private _sectionTitles: { [section: string]: SectionTitleComponent } = {};
   private _destroy = new Subject();
 
   constructor() {
@@ -65,6 +70,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._destroy.next();
+  }
+
+  ngAfterViewInit(): void {
+    this._sectionTitles['about'] = this.aboutRef;
+    this._sectionTitles['pricing'] = this.pricingRef;
+  }
+
+  onHeaderOptionSelected(option: HeaderOption): void {
+    if (this._sectionTitles[option]) {
+      this._sectionTitles[option].scrollIntoView();
+    }
   }
 
   private getRandomImage(images: Array<{ url: string }>): string {

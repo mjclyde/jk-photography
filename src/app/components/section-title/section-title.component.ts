@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-section-title',
@@ -10,9 +10,12 @@ export class SectionTitleComponent implements OnInit {
   @Input() title: string;
   @Input() subTitle: string;
 
-  constructor() { }
+  constructor(private el: ElementRef) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  scrollIntoView(): void {
+    this.el.nativeElement.scrollIntoView({behavior: 'smooth'});
   }
 
 }

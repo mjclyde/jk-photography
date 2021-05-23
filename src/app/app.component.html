@@ -1,6 +1,7 @@
 <div>
 
-  <app-header [fullHeight]="showFullHeightHeader | async"></app-header>
+  <app-header (optionSelected)="onHeaderOptionSelected($event)" [fullHeight]="showFullHeightHeader | async">
+  </app-header>
   <img src="{{bannerImageUrl | async}}">
 
   <app-section-title title="Hi. My name is Jamie." subTitle="I am so glad you are here!"></app-section-title>
@@ -23,7 +24,7 @@
     </tr>
   </table>
 
-  <app-section-title title="About Me" subTitle="Why don't I introduce myself."></app-section-title>
+  <app-section-title #aboutRef title="About Me" subTitle="Why don't I introduce myself."></app-section-title>
   <img src="assets/about/jamie-05.jpg" alt="">
   <div class="title">I am a seeker of the light, in all its forms.</div>
   <div class="text">
@@ -83,6 +84,18 @@
 
   <img src="assets/info/larger-family.jpg" alt="">
 
+  <app-section-title #pricingRef title="Pricing" subTitle="For priceless memories"></app-section-title>
+
+  <div class="pricing-cards">
+    <app-price-card img="assets/pricing/birth.jpg" header="Births" subHeader="Starting at $550">
+    </app-price-card>
+    <app-price-card img="assets/pricing/lifestyle.jpg" header="Lifestyle" subHeader="Starting at $350">
+    </app-price-card>
+    <app-price-card img="assets/pricing/commercial.jpg" header="Commercial" subHeader="Starting at $200">
+    </app-price-card>
+    <app-price-card img="assets/pricing/wedding.jpg" header="Weddings" subHeader="Collections starting at $1500">
+    </app-price-card>
+  </div>
 
   <!-- <app-section-title title="Pricing" subTitle="All magic comes at a price, deary..."></app-section-title>
   <app-price-card img="http://placekitten.com/200/250" header="Births" subHeader="Sessions starting at $550">

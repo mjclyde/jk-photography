@@ -6,10 +6,10 @@
     </div>
 
     <div class="options">
-      <a>about</a>
-      <a>pricing</a>
-      <a>testimonials</a>
-      <a>contact</a>
+      <a (click)="optionSelected.next('about')">about</a>
+      <a (click)="optionSelected.next('pricing')">pricing</a>
+      <a (click)="optionSelected.next('testimonials')">testimonials</a>
+      <a (click)="optionSelected.next('contact')">contact</a>
       <div class="social-icons">
         <img src="assets/instagram-icon.png" alt="">
         <img src="assets/facebook-icon.png" alt="">
